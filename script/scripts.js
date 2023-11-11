@@ -44,6 +44,7 @@ function agregarEstudiante(pelicula) {
     boton2.textContent = "Editar"
     boton2.classList.add('btn','btn-success');
     boton2.onclick = function(){
+        document.getElementById("btnEdit").disable = "true";
         document.getElementById("id").value = fila.children[0].innerHTML;
         document.getElementById("title").value = fila.children[1].innerHTML;
         document.getElementById("year").value = fila.children[2].innerHTML;
