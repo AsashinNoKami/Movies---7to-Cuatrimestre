@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+}
+
+input,textarea, select{
+    text-align: center;
+    width: 400px;
+    height: 40px;
+    margin-bottom: 10px;
+}
