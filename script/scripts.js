@@ -1,3 +1,5 @@
+let contador_peliculas = 0;
+
 document.getElementById("formulario").addEventListener('submit', function (e) {
     
 
@@ -23,6 +25,7 @@ function agregarEstudiante(pelicula) {
     var tbody = document.getElementById("cuerpoTabla");
 
     var fila = document.createElement("tr");
+    
 
     for(var key in pelicula){
         var td = document.createElement("td");
@@ -35,6 +38,8 @@ function agregarEstudiante(pelicula) {
     boton.classList.add('btn','btn-danger');
     boton.onclick = function(){
         tbody.removeChild(fila)
+        contador_peliculas--;
+        document.querySelector("span").innerHTML = contador_peliculas;
     }
     td.appendChild(boton);
     fila.appendChild(td);
@@ -55,14 +60,34 @@ function agregarEstudiante(pelicula) {
         
 
     }
+
+    var buttonEdit = document.getElementById("btnEdit")
+    buttonEdit.onclick = function(){
+        console.log("Holis");
+        
+        fila.children[0].innerHTML = document.getElementById("id").value;
+        fila.children[1].innerHTML = document.getElementById("title").value;
+        fila.children[2].innerHTML = document.getElementById("year").value;
+        fila.children[3].innerHTML = document.getElementById("duration").value;
+        fila.children[4].innerHTML = document.getElementById("gender").value;
+        fila.children[5].innerHTML = document.getElementById("director").value;
+        fila.children[6].innerHTML = document.getElementById("sinopsis").value;
+
+    }
+
     td2.appendChild(boton2);
     fila.appendChild(td2);
     tbody.appendChild(fila)
 
+
+    contador_peliculas++;
+    document.querySelector("span").innerHTML = contador_peliculas;
 }
 
-function Edit(){
-    
-
-
-}
+document.getElementById("recomendar").addEventListener('click',function(e){
+    let cuerpo_tabla = document.getElementById("cuerpoTabla")
+    let filas = cuerpo_tabla.rows;
+    let aleatorio = Math.floor(Math.random()*filas.length);
+    let peli = filas[aleatorio].cells[1].textContent;
+    alert("Te recomiendo la película: " + peli);        
+})

@@ -10,10 +10,11 @@
 </head>
 
 <body>
-    <label id="id" visible="false"></label>
+    
     <div class="container">
         <h1>Peliculas</h1>
         <form id="formulario">
+            <label id="id" visible="false"></label>
             <input class="form-control" type="text" id="title" placeholder="Titulo" required>
             <input class="form-control" type="number" id="year" placeholder="2000" min="2000" required>
             <input class="form-control" type="text" id="duration" placeholder="120 min">
@@ -24,16 +25,22 @@
                 <option value="horror">Horror</option>
                 <option value="musical">Musical</option>
                 <option value="action">Accion</option>
-                <option value="aventure">Aventura</option>
+                <option value="adventure">Aventura</option>
             </select>
             <input class="form-control" type="text" id="director" placeholder="Director">
             <textarea class="form-control" id="sinopsis" placeholder="Sinopsis" rows="5"></textarea>
             <button class="btn btn-primary" id="btnSubmit" type="submit">Agregar Pelicula</button>
-            <button class="btn btn-success" id="btnEdit" disabled="true" onclick="Edit()">Editar Pelicula</button>
+            <button class="btn btn-success" id="btnEdit" disabled="true" type="button" >Editar Pelicula</button>
         </form>
     </div>
 
-    <h3>Lista de Peliculas</h3>
+    <div class="container2">
+        <h5><span>0</span> peliculas</h5>
+        <button class="btn btn-dark" id="recomendar">
+            Recomendar Pelicuas
+        </button>
+    </div>
+    <h3 style="text-align: center;">Lista de Peliculas</h3>
 
     <table class="table">
         <thead>
